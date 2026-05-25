@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, Zap, ChevronLeft, ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import OptimizedImage from '../components/OptimizedImage';
 import robotVideo from '../assets/robot.mp4';
 import robot1Video from '../assets/robot1.mp4';
 import solarpanelsVideo from '../assets/solar panels.mp4';
 import AdvancedRobotics from '../assets/advanced robotics.mp4';
-import ProfessionalDrone from '../assets/professional drone.jpg';
+import ProfessionalDrone from '../assets/professional drone.optimized.webp';
 import SolarEnergy from '../assets/solar energy.mp4';
 
 const Home = () => {
@@ -251,7 +252,7 @@ const Home = () => {
 
           {/* Professional Drones - Stretches near right edge */}
           <div className="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-emerald-500 transition-all duration-500 h-96 lg:h-full min-h-[500px]">
-            <img
+            <OptimizedImage
               src={innovations[1].image}
               alt={innovations[1].title}
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -307,10 +308,11 @@ const Home = () => {
                     <source src={galleryItems[currentGalleryIndex].video} type="video/mp4" />
                   </video>
                 ) : (
-                  <img
+                  <OptimizedImage
                     src={galleryItems[currentGalleryIndex].image}
                     alt={galleryItems[currentGalleryIndex].title}
                     className="w-full h-full object-cover"
+                    fetchPriority={currentGalleryIndex === 0 ? 'high' : undefined}
                   />
                 )}
                 

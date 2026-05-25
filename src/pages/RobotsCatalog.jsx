@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 function RobotsCatalog() {
   const [robots, setRobots] = useState([]);
@@ -234,13 +235,13 @@ function RobotsCatalog() {
             {/* Main Gallery Display */}
             <div className="bg-gradient-to-br from-slate-800/90 to-blue-900/90 backdrop-blur-sm overflow-hidden shadow-2xl">
               <div className="relative h-96 md:h-[600px] lg:h-[700px] overflow-hidden">
-                <img
+                <OptimizedImage
                   src={currentRobot?.image || "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=1200"}
+                  fallbackSrc="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt={currentRobot?.name}
                   className="w-full h-full object-cover transition-all duration-700"
-                  onError={(e) => {
-                    e.target.src = "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=1200";
-                  }}
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 
                 {/* Dark Overlay */}

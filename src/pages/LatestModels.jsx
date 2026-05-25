@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ChevronRight, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
 import DJIAIR3S from '../assets/DJI Air 3S.avif';
 import DJIAVATA2FLYMORECOMBO from '../assets/dji avata 2 fly more combo.jpg';
 import DJIMAVIC4PRODRONECOMBO from '../assets/DJI Mavic 4 Pro Drone Combo.png';
-import Mavic2 from '../assets/mavic 2.jpg';
+import Mavic2 from '../assets/mavic 2.optimized.webp';
 
 const LatestModels = () => {
   const navigate = useNavigate();
@@ -93,13 +94,11 @@ const LatestModels = () => {
               key={drone.id}
               className="group relative overflow-hidden rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-2xl h-[500px]"
             >
-              <img
+              <OptimizedImage
                 src={drone.image}
                 alt={drone.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=600';
-                }}
+                fallbackSrc="https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=600"
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>

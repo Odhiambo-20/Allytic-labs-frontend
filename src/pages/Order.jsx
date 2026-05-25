@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CreditCard, Lock, ArrowLeft, Check, MapPin, Smartphone, AlertCircle, Loader } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 function Order() {
   const location = useLocation();
@@ -552,14 +553,13 @@ function Order() {
         <div className="flex w-full">
           <div className="w-3/4 bg-gray-50 relative">
             {!showMap ? (
-              <img
+              <OptimizedImage
                 src={robot.image}
+                fallbackSrc="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt={robot.name}
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  console.error('Image failed to load:', robot.image);
-                  e.currentTarget.src = "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600";
-                }}
+                loading="eager"
+                fetchPriority="high"
               />
             ) : (
               <div className="w-full h-full relative">

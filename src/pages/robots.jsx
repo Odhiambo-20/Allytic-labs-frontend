@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, Instagram, Github, Youtube, Linkedin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { robotAPI } from '../services/api';
+import OptimizedImage from '../components/OptimizedImage';
 import AllyticVideo from '../assets/Allytic.mp4';
 import FoodTestingRobot from '../assets/Food Testing Robot.webm';
 import AgriculturalRobotVideo from '../assets/Agricultural Robot.webm';
@@ -247,13 +248,11 @@ function Robots() {
                   className="bg-gradient-to-br from-slate-800/80 to-blue-900/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 shadow-xl"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={robot.image || "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                      fallbackSrc="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600"
                       alt={robot.name}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.src = "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600";
-                      }}
                     />
                     <div className="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-sm px-3 py-1 rounded-full">
                       <span className="text-white text-sm font-semibold">{robot.type}</span>

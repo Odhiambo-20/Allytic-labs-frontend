@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Zap, TrendingUp, Shield, Leaf, ArrowRight, CheckCircle, Star, MapPin, Phone, Mail, Calendar, Award, BarChart3 } from 'lucide-react';
 import { solarPanelAPI } from '../services/api';
+import OptimizedImage from '../components/OptimizedImage';
 import solarVideo from '../assets/solar.mp4';
 import solar from '../assets/solar.webm';
 import solarFarmImage from '../assets/solar panels.jpg';
 import cuttingEdgeImage from '../assets/cutting-edge solar panels.jpg';
 import solarPanels1Image from '../assets/solar panels 1.jpg';
-import RoofTopSolar from '../assets/roof-top solar.jpg';
+import RoofTopSolar from '../assets/roof-top solar.optimized.webp';
 
 const SolarPanels = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -120,7 +121,7 @@ const SolarPanels = () => {
       <div className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4">
           <div className="order-2 lg:order-1">
-            <img src={RoofTopSolar} alt="Rooftop Solar" className="w-full h-96 md:h-[500px] object-cover rounded-3xl shadow-2xl" />
+            <OptimizedImage src={RoofTopSolar} alt="Rooftop Solar" className="w-full h-96 md:h-[500px] object-cover rounded-3xl shadow-2xl" />
           </div>
           <div className="order-1 lg:order-2 px-4 lg:px-8">
             <h2 className="text-5xl font-bold text-slate-900 mb-6">Transform Your Home with Rooftop Solar</h2>
@@ -159,7 +160,7 @@ const SolarPanels = () => {
             <button className="flex items-center gap-2 px-8 py-4 border-2 border-orange-600 text-orange-600 hover:bg-orange-50 font-bold rounded-lg transition-all">Explore Farm Solutions<ArrowRight className="w-5 h-5" /></button>
           </div>
           <div>
-            <img src={solarFarmImage} alt="Solar Farm" className="w-full h-96 md:h-[500px] object-cover rounded-3xl shadow-2xl" />
+            <OptimizedImage src={solarFarmImage} alt="Solar Farm" className="w-full h-96 md:h-[500px] object-cover rounded-3xl shadow-2xl" />
           </div>
         </div>
       </div>
@@ -168,7 +169,7 @@ const SolarPanels = () => {
       <div className="py-20 bg-gradient-to-br from-slate-50 to-orange-50">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4">
           <div className="order-2 lg:order-1">
-            <img src={cuttingEdgeImage} alt="Commercial Solar" className="w-full h-96 md:h-[500px] object-cover rounded-3xl shadow-2xl" />
+            <OptimizedImage src={cuttingEdgeImage} alt="Commercial Solar" className="w-full h-96 md:h-[500px] object-cover rounded-3xl shadow-2xl" />
           </div>
           <div className="order-1 lg:order-2 px-4 lg:px-8">
             <h2 className="text-5xl font-bold text-slate-900 mb-6">Enterprise-Grade Commercial Solar</h2>
@@ -211,7 +212,7 @@ const SolarPanels = () => {
               {filteredPanels.map((panel) => (
                 <div key={panel.id} className="bg-white rounded-2xl overflow-hidden border border-orange-200 hover:border-orange-400 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <div className="relative h-64 overflow-hidden">
-                    <img src={panel.image || solarPanels1Image} alt={panel.name} className="w-full h-full object-cover" onError={(e) => { e.target.src = solarPanels1Image; }} />
+                    <OptimizedImage src={panel.image || solarPanels1Image} fallbackSrc={solarPanels1Image} alt={panel.name} className="w-full h-full object-cover" />
                     <div className="absolute top-4 right-4 bg-orange-600/90 backdrop-blur-sm px-3 py-1 rounded-full"><span className="text-white text-sm font-semibold">{panel.type}</span></div>
                   </div>
                   <div className="p-6">

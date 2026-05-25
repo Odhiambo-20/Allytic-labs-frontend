@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight, Instagram, Github, Youtube, Linkedin } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
 import DeliveryDrone from '../assets/delivery drone.jpg';
-import DroneImage from '../assets/drone.jpg';
+import DroneImage from '../assets/drone.optimized.webp';
 import AgriculturalDrone from '../assets/agricultural drone.jpg';
 import DroneVideo from '../assets/drone.mp4';
 
@@ -179,11 +180,13 @@ const Drones = () => {
 
       <section className="relative h-screen pt-16 flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
-          <img
+          <OptimizedImage
             key={currentGalleryIndex}
             src={galleryItems[currentGalleryIndex].image}
             alt={galleryItems[currentGalleryIndex].title}
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
@@ -298,13 +301,11 @@ const Drones = () => {
                   onMouseLeave={() => setHoveredDroneId(null)}
                   className="relative overflow-hidden rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-500 h-96 group"
                 >
-                  <img
+                  <OptimizedImage
                     src={drone.image || "https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                    fallbackSrc="https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt={drone.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    onError={(e) => {
-                      e.target.src = "https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=600";
-                    }}
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500"></div>
