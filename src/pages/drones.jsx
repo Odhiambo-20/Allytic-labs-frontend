@@ -153,31 +153,6 @@ const Drones = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
-      <nav className="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center font-bold">
-                A
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Allytic Labs
-              </span>
-            </Link>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
-              <Link to="/robots" className="text-gray-300 hover:text-white transition-colors">Robots</Link>
-              <Link to="/drones" className="text-blue-400 hover:text-blue-300 transition-colors">Drones</Link>
-              <Link to="/solarpanels" className="text-gray-300 hover:text-white transition-colors">Solar</Link>
-              <Link to="/contact" className="bg-gradient-to-r from-blue-500 to-cyan-600 px-4 py-2 rounded-lg hover:shadow-lg transition-all">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       <section className="relative h-screen pt-16 flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
           <OptimizedImage

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, Zap, ChevronLeft, ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
+import { ChevronRight, Zap, ChevronLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import OptimizedImage from '../components/OptimizedImage';
 import robotVideo from '../assets/robot.mp4';
 import robot1Video from '../assets/robot1.mp4';
@@ -127,9 +126,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
-      {/* Use the Navbar component instead of inline navbar */}
-      <Navbar />
-
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 w-full h-full">
           <video
