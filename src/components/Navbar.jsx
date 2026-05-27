@@ -19,11 +19,13 @@ function Navbar() {
         <div className="flex h-16 items-center justify-between gap-6">
           <BrandLogo />
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 md:flex">
             <Link to="/" className={navLinkClass('/')}>Home</Link>
+            <Link to="/about" className={navLinkClass('/about')}>About</Link>
             <Link to="/robots" className={navLinkClass('/robots')}>Robots</Link>
             <Link to="/drones" className={navLinkClass('/drones')}>Drones</Link>
             <Link to="/solarpanels" className={navLinkClass('/solarpanels')}>Solar Panels</Link>
+            <Link to="/partners" className={navLinkClass('/partners')}>Partners</Link>
             <Link to="/contact" className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-lg">
               Contact Us
             </Link>
@@ -49,9 +51,11 @@ function Navbar() {
         <div className="border-t border-gray-800 bg-gray-950 md:hidden">
           <div className="mx-auto max-w-7xl space-y-1 px-4 py-3">
             <Link to="/" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/about" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link to="/robots" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Robots</Link>
             <Link to="/drones" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Drones</Link>
             <Link to="/solarpanels" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Solar Panels</Link>
+            <Link to="/partners" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Partners</Link>
             <Link to="/contact" className="block rounded-lg px-3 py-2 text-blue-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
             {isHomePage && (
               <Link to="/login" className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-white/10 hover:text-white" onClick={() => setIsMenuOpen(false)}>Login</Link>
