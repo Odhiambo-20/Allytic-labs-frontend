@@ -1,0 +1,21 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="allyticLogoTitle allyticLogoDesc">
+  <title id="allyticLogoTitle">Allytic Labs Logo</title>
+  <desc id="allyticLogoDesc">A technology mark shaped like the letter A with connected analytics nodes.</desc>
+  <rect width="256" height="256" rx="48" fill="#07111F"/>
+  <path d="M47 197L111.2 55.5C117.6 41.4 138.4 41.4 144.8 55.5L209 197" stroke="url(#paint0_linear)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M83 151H173" stroke="#EAF6FF" stroke-width="20" stroke-linecap="round"/>
+  <path d="M102 151L128 95L154 151" stroke="#53E2B7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 96C95.4 77.7 114 69 128 69C145.2 69 164.2 82 181 109" stroke="#38BDF8" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 18"/>
+  <circle cx="76" cy="96" r="13" fill="#53E2B7"/>
+  <circle cx="181" cy="109" r="13" fill="#A78BFA"/>
+  <circle cx="128" cy="69" r="11" fill="#F8FAFC"/>
+  <circle cx="128" cy="69" r="22" stroke="#F8FAFC" stroke-opacity="0.18" stroke-width="6"/>
+  <path d="M57 205H199" stroke="#1E3A5F" stroke-width="10" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="47" y1="126.25" x2="209" y2="126.25" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="0.5" stop-color="#53E2B7"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+</svg>
