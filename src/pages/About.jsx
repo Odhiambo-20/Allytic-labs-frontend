@@ -72,6 +72,7 @@ function About() {
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
+    let ticking = false;
 
     const updateHash = (id) => {
       const nextUrl = `${window.location.pathname}#${id}`;
@@ -80,25 +81,35 @@ function About() {
       }
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const setHashFromScrollPosition = () => {
+      const viewportAnchor = window.scrollY + window.innerHeight * 0.42;
+      const activeSection = sections.reduce((current, section) => {
+        const sectionTop = section.offsetTop;
+        return sectionTop <= viewportAnchor ? section : current;
+      }, sections[0]);
 
-        if (visibleEntry?.target?.id) {
-          updateHash(visibleEntry.target.id);
-        }
-      },
-      {
-        rootMargin: '-35% 0px -50% 0px',
-        threshold: [0.2, 0.4, 0.6, 0.8],
+      if (activeSection?.id) {
+        updateHash(activeSection.id);
       }
-    );
 
-    sections.forEach((section) => observer.observe(section));
+      ticking = false;
+    };
 
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(setHashFromScrollPosition);
+        ticking = true;
+      }
+    };
+
+    setHashFromScrollPosition();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   return (
