@@ -190,7 +190,7 @@ function SignUp() {
     <div className="min-h-screen bg-white flex flex-col">
       <header className="py-6 px-8">
         <div className="max-w-md mx-auto">
-          <div className="text-2xl font-bold text-gray-900">Allytic Labs</div>
+          <div className="text-2xl font-bold text-gray-900">BELLA</div>
         </div>
       </header>
 
