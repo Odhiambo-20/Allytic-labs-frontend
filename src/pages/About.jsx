@@ -313,21 +313,26 @@ function About() {
 
       <main>
         {storySections.map(({ id, title, eyebrow, description, media, icon: Icon }, index) => (
-          <section key={id} id={id} className={`scroll-mt-24 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
-            <div className={`mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center ${index % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-              <div>
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-cyan-300">
+          <section key={id} id={id} className="relative min-h-screen scroll-mt-24 overflow-hidden bg-slate-950 text-white">
+            <video className="absolute inset-0 h-full w-full object-cover opacity-65" autoPlay muted loop playsInline>
+              <source src={media} type="video/mp4" />
+            </video>
+            <div className={`absolute inset-0 ${
+              index % 2 === 0
+                ? 'bg-gradient-to-r from-black via-black/70 to-black/20'
+                : 'bg-gradient-to-l from-black via-black/70 to-black/20'
+            }`} />
+
+            <div className={`relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 ${
+              index % 2 === 1 ? 'justify-end' : 'justify-start'
+            }`}>
+              <div className="about-section-copy max-w-2xl">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-cyan-300 backdrop-blur">
                   <Icon className="h-6 w-6" />
                 </div>
-                <p className="text-sm font-bold uppercase text-blue-700">{eyebrow}</p>
-                <h2 className="mt-3 text-4xl font-bold tracking-normal text-slate-950 md:text-5xl">{title}</h2>
-                <p className="mt-6 text-lg leading-8 text-slate-700">{description}</p>
-              </div>
-
-              <div className="overflow-hidden rounded-lg bg-slate-900 shadow-xl">
-                <video className="aspect-video w-full object-cover" autoPlay muted loop playsInline>
-                  <source src={media} type="video/mp4" />
-                </video>
+                <p className="text-sm font-bold uppercase text-cyan-300">{eyebrow}</p>
+                <h2 className="mt-3 text-4xl font-bold tracking-normal text-white md:text-6xl">{title}</h2>
+                <p className="mt-6 text-xl leading-9 text-white/75">{description}</p>
               </div>
             </div>
           </section>
