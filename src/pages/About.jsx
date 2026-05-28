@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BriefcaseBusiness, ChevronDown, Cpu, Drone, History, Leaf, Menu, Newspaper, X, Zap } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter';
@@ -138,19 +138,6 @@ function About() {
   const [openMenu, setOpenMenu] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const [activeSectionId, setActiveSectionId] = useState('body-of-work');
-  const [visibleCopy, setVisibleCopy] = useState({});
-  const revealTimers = useRef({});
-
-  const queueCopyReveal = useCallback((id) => {
-    if (visibleCopy[id] || revealTimers.current[id]) {
-      return;
-    }
-
-    revealTimers.current[id] = window.setTimeout(() => {
-      setVisibleCopy((current) => ({ ...current, [id]: true }));
-      delete revealTimers.current[id];
-    }, 1200);
-  }, [visibleCopy]);
 
   useEffect(() => {
     const sectionIds = anchors.map(([href]) => href.slice(1));
@@ -198,13 +185,9 @@ function About() {
     };
   }, []);
 
-  useEffect(() => () => {
-    Object.values(revealTimers.current).forEach((timer) => window.clearTimeout(timer));
-  }, []);
-
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <section id="body-of-work" className="relative min-h-[calc(100vh-4rem)] scroll-mt-24 overflow-hidden bg-black pt-16 text-white">
+      <section id="body-of-work" className="about-video-section relative min-h-[calc(100vh-4rem)] scroll-mt-24 overflow-hidden bg-black pt-16 text-white">
         <div className="absolute inset-0">
           <video
             className="h-full w-full object-cover opacity-45 grayscale"
@@ -212,8 +195,6 @@ function About() {
             muted
             loop
             playsInline
-            onLoadedData={() => queueCopyReveal('body-of-work')}
-            onPlay={() => queueCopyReveal('body-of-work')}
           >
             <source src={roboticsVideo} type="video/mp4" />
           </video>
@@ -273,7 +254,7 @@ function About() {
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-7xl items-center px-6 py-16">
-          <div className={`about-section-copy max-w-2xl ${visibleCopy['body-of-work'] ? 'is-visible' : ''}`}>
+          <div className="about-section-copy max-w-2xl">
             <h1 className="text-5xl font-bold leading-tight tracking-normal text-white/70 md:text-7xl">
               Our Body of Work
             </h1>
@@ -338,15 +319,13 @@ function About() {
 
       <main>
         {storySections.map(({ id, title, eyebrow, description, media, icon: Icon }, index) => (
-          <section key={id} id={id} className="relative min-h-screen scroll-mt-24 overflow-hidden bg-slate-950 text-white">
+          <section key={id} id={id} className="about-video-section relative min-h-screen scroll-mt-24 overflow-hidden bg-slate-950 text-white">
             <video
               className="absolute inset-0 h-full w-full object-cover opacity-65"
               autoPlay
               muted
               loop
               playsInline
-              onLoadedData={() => queueCopyReveal(id)}
-              onPlay={() => queueCopyReveal(id)}
             >
               <source src={media} type="video/mp4" />
             </video>
@@ -359,7 +338,7 @@ function About() {
             <div className={`relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 ${
               index % 2 === 1 ? 'justify-end' : 'justify-start'
             }`}>
-              <div className={`about-section-copy max-w-2xl ${visibleCopy[id] ? 'is-visible' : ''}`}>
+              <div className="about-section-copy max-w-2xl">
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-cyan-300 backdrop-blur">
                   <Icon className="h-6 w-6" />
                 </div>
