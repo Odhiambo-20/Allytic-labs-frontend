@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight, Instagram, Github, Youtube, Linkedin } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import BrandLogo from '../components/BrandLogo';
 import DeliveryDrone from '../assets/delivery drone.jpg';
 import DroneImage from '../assets/drone.jpg';
 import AgriculturalDrone from '../assets/agricultural drone.jpg';
@@ -412,66 +413,7 @@ const Drones = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="flex items-center mb-4">
-                {/* Wings SVG */}
-                <svg width="40" height="24" viewBox="0 0 50 30" className="mr-2">
-                  {/* Left Wing */}
-                  <path
-                    d="M 5 15 Q 8 8, 15 10 Q 18 12, 20 15"
-                    fill="none"
-                    stroke="#E8B4A0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 5 15 Q 8 10, 12 12 Q 15 14, 18 16"
-                    fill="none"
-                    stroke="#E8B4A0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 5 15 Q 7 12, 10 14 Q 13 16, 16 17"
-                    fill="none"
-                    stroke="#E8B4A0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  
-                  {/* Right Wing */}
-                  <path
-                    d="M 45 15 Q 42 8, 35 10 Q 32 12, 30 15"
-                    fill="none"
-                    stroke="#E8B4A0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 45 15 Q 42 10, 38 12 Q 35 14, 32 16"
-                    fill="none"
-                    stroke="#E8B4A0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 45 15 Q 43 12, 40 14 Q 37 16, 34 17"
-                    fill="none"
-                    stroke="#E8B4A0"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                
-                {/* Text Logo */}
-                <div className="flex flex-col">
-                  <span className="text-xl font-bold tracking-wider" style={{ color: '#E8B4A0' }}>
-                    BELLA
-                  </span>
-                  <span className="text-xs font-light tracking-widest" style={{ color: '#E8B4A0', marginTop: '-4px' }}>
-                    TECHNOLOGIES
-                  </span>
-                </div>
-              </div>
+              <BrandLogo className="mb-4" />
               <p className="text-gray-400 text-sm">Pioneering the future of robotics, drones, and renewable energy solutions.</p>
             </div>
 
