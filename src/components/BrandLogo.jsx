@@ -9,69 +9,69 @@ const BrandLogo = ({ className = '' }) => (
   >
     <span className="inline-flex items-center text-white transition-colors group-hover:text-blue-100">
       <svg
-        className="h-12 w-[8.75rem]"
-        viewBox="0 0 280 96"
+        className="h-14 w-[12.5rem]"
+        viewBox="0 0 360 116"
         role="img"
         aria-labelledby="bellaLogoTitle"
       >
         <title id="bellaLogoTitle">Bella</title>
         <path
-          d="M17 13H94C100.6 13 106 18.4 106 25V79C106 85.6 100.6 91 94 91H17V13Z"
+          d="M16 12H98C105.2 12 111 17.8 111 25V91C111 98.2 105.2 104 98 104H16V12Z"
           fill="none"
           stroke="currentColor"
-          strokeWidth="8"
+          strokeWidth="9"
           strokeLinejoin="round"
         />
         <path
-          d="M86 33C77 25.5 61.5 23.5 48.8 30.3C35.6 37.4 30 51.4 36.2 62.2C41.2 70.9 53.3 73.6 64.3 68.9C72.7 65.3 76 58 72.4 52.4C69.3 47.5 60.7 46.6 52.7 51"
+          d="M88 34C78.4 25.8 59.8 23.7 44 31.9C26.9 40.8 21.4 58.6 31.8 70.6C40.7 80.8 59.2 81.2 71.5 71.7C83.9 62.1 81.3 47.2 67 43.4C56.7 40.7 44.9 45.8 38.3 56.4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="11"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M76.5 36C97.4 48.6 100.6 72.9 84.6 90.5C70.3 106.2 43.8 104.3 25 87.8"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M130 24V84"
+          stroke="currentColor"
+          strokeWidth="10"
+          strokeLinecap="round"
+        />
+        <path
+          d="M149 24V84"
+          stroke="currentColor"
+          strokeWidth="10"
+          strokeLinecap="round"
+        />
+        <path
+          d="M168 24V84"
+          stroke="currentColor"
+          strokeWidth="10"
+          strokeLinecap="round"
+        />
+        <path
+          d="M194 24V84H238C253.5 84 266 71.6 266 54C266 36.4 253.5 24 238 24H194Z"
           fill="none"
           stroke="currentColor"
           strokeWidth="10"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <path
-          d="M74 33C91.5 43 94.9 62.9 81.5 77.8C68.7 92 44.7 91.7 29 77"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M119 24V72"
-          stroke="currentColor"
-          strokeWidth="9"
-          strokeLinecap="round"
-        />
-        <path
-          d="M138 24V72"
-          stroke="currentColor"
-          strokeWidth="9"
-          strokeLinecap="round"
-        />
-        <path
-          d="M157 24V72"
-          stroke="currentColor"
-          strokeWidth="9"
-          strokeLinecap="round"
-        />
-        <path
-          d="M177 24H218C229 24 238 33 238 48C238 63 229 72 218 72H177V24Z"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
         <text
-          x="136"
-          y="90"
+          x="195"
+          y="108"
           fill="currentColor"
           fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-          fontSize="22"
+          fontSize="24"
           fontWeight="300"
-          letterSpacing="13"
+          letterSpacing="15"
         >
           BELLA
         </text>
