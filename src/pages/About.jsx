@@ -10,29 +10,6 @@ import droneVideo from '../assets/drone.mp4';
 import solarVideo from '../assets/solar.mp4';
 import solarEnergyVideo from '../assets/solar energy.mp4';
 import solarPanelsVideo from '../assets/solar panels.mp4';
-import robotImage from '../assets/professional drone.jpg';
-import solarImage from '../assets/roof-top solar.jpg';
-import droneImage from '../assets/agricultural drone.jpg';
-
-const anchors = [
-  ['#body-of-work', 'Our Body of Work'],
-  ['#the-automation-moment', 'The Automation Moment'],
-  ['#robotics-for-the-field', 'Robotics for the Field'],
-  ['#connecting-physical-operations', 'Connecting Physical Operations'],
-  ['#energy-resilience', 'Energy Resilience'],
-  ['#like-no-place-you-have-worked', 'Like No Place You Have Worked'],
-];
-
-const heroVideos = [
-  ['Our Body of Work', roboticsVideo],
-  ['Automation Systems', robotOneVideo],
-  ['Field Robotics', robotTwoVideo],
-  ['Industrial Robotics', robotVideo],
-  ['Aerial Operations', droneVideo],
-  ['Solar Deployment', solarVideo],
-  ['Energy Systems', solarEnergyVideo],
-  ['Solar Infrastructure', solarPanelsVideo],
-];
 
 const storySections = [
   {
@@ -41,8 +18,7 @@ const storySections = [
     eyebrow: 'Practical intelligence',
     description:
       'Robotics, aerial systems, and renewable energy are moving from isolated experiments into everyday operations. Bella exists to help organizations make that transition with discipline.',
-    media: roboticsVideo,
-    mediaType: 'video',
+    media: robotOneVideo,
     icon: Cpu,
   },
   {
@@ -51,8 +27,7 @@ const storySections = [
     eyebrow: 'Machines that work',
     description:
       'We focus on robots that can inspect, move, support, test, clean, and assist in real environments where reliability matters more than a showroom demonstration.',
-    media: robotImage,
-    mediaType: 'image',
+    media: robotTwoVideo,
     icon: Zap,
   },
   {
@@ -61,8 +36,7 @@ const storySections = [
     eyebrow: 'Aerial visibility',
     description:
       'Drones extend the reach of teams that manage farms, infrastructure, sites, and assets. Our work centers on useful payloads, route planning, monitoring, and safe operation.',
-    media: droneImage,
-    mediaType: 'image',
+    media: droneVideo,
     icon: Drone,
   },
   {
@@ -71,10 +45,41 @@ const storySections = [
     eyebrow: 'Sustainable deployment',
     description:
       'Solar systems make technology more dependable by reducing operating risk and energy uncertainty. We connect product selection with site planning and long-term support.',
-    media: solarImage,
-    mediaType: 'image',
+    media: solarVideo,
     icon: Leaf,
   },
+  {
+    id: 'industrial-automation',
+    title: 'Industrial Automation',
+    eyebrow: 'Resilient production',
+    description:
+      'Automation succeeds when machines, operators, and data work together. Bella designs systems that support production goals without adding unnecessary operational friction.',
+    media: robotVideo,
+    icon: Cpu,
+  },
+  {
+    id: 'energy-systems',
+    title: 'Energy Systems',
+    eyebrow: 'Cleaner operations',
+    description:
+      'Energy infrastructure is part of the operating stack. We help teams plan solar capacity, storage readiness, and dependable deployment paths for real sites.',
+    media: solarEnergyVideo,
+    icon: Leaf,
+  },
+  {
+    id: 'solar-infrastructure',
+    title: 'Solar Infrastructure',
+    eyebrow: 'Power at scale',
+    description:
+      'From panels to field installation, our work turns renewable energy into practical infrastructure that supports homes, facilities, and distributed teams.',
+    media: solarPanelsVideo,
+    icon: Leaf,
+  },
+];
+
+const anchors = [
+  ['#body-of-work', 'Our Body of Work'],
+  ...storySections.map(({ id, title }) => [`#${id}`, title]),
 ];
 
 const resourceLinks = [
@@ -132,7 +137,7 @@ const subnavMenus = [
 function About() {
   const [openMenu, setOpenMenu] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
-  const [activeHeroVideo, setActiveHeroVideo] = useState(0);
+  const [activeSectionId, setActiveSectionId] = useState('body-of-work');
 
   useEffect(() => {
     const sectionIds = anchors.map(([href]) => href.slice(1));
@@ -157,6 +162,7 @@ function About() {
 
       if (activeSection?.id) {
         updateHash(activeSection.id);
+        setActiveSectionId(activeSection.id);
       }
 
       ticking = false;
@@ -183,8 +189,8 @@ function About() {
     <div className="min-h-screen bg-white text-slate-950">
       <section id="body-of-work" className="relative min-h-[calc(100vh-4rem)] scroll-mt-24 overflow-hidden bg-black pt-16 text-white">
         <div className="absolute inset-0">
-          <video key={heroVideos[activeHeroVideo][1]} className="h-full w-full object-cover opacity-45 grayscale" autoPlay muted loop playsInline>
-            <source src={heroVideos[activeHeroVideo][1]} type="video/mp4" />
+          <video className="h-full w-full object-cover opacity-45 grayscale" autoPlay muted loop playsInline>
+            <source src={roboticsVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/35" />
         </div>
@@ -286,28 +292,27 @@ function About() {
           </div>
         )}
 
-        <a href="/contact" className="absolute right-0 top-1/2 z-40 hidden -translate-y-1/2 rotate-180 bg-white px-3 py-4 text-sm font-semibold text-black [writing-mode:vertical-rl] lg:block">
+        <a href="/contact" className="fixed right-0 top-1/2 z-40 hidden -translate-y-1/2 rotate-180 bg-white px-3 py-4 text-sm font-semibold text-black shadow-lg [writing-mode:vertical-rl] lg:block">
           Feedback
         </a>
 
-        <div className="absolute right-14 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-3 lg:flex" aria-label="About hero videos">
-          {heroVideos.map(([label], index) => (
-            <button
-              key={label}
-              type="button"
-              onClick={() => setActiveHeroVideo(index)}
-              className={`h-3 w-3 rounded-sm border border-white/80 transition ${
-                activeHeroVideo === index ? 'bg-white' : 'bg-white/35 hover:bg-white/70'
+        <div className="fixed right-14 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-3 lg:flex" aria-label="About page sections">
+          {anchors.map(([href, label]) => (
+            <a
+              key={href}
+              href={href}
+              className={`h-3 w-3 rounded-full border border-white/80 shadow transition ${
+                activeSectionId === href.slice(1) ? 'bg-white' : 'bg-white/35 hover:bg-white/70'
               }`}
-              aria-label={`Show ${label} video`}
-              aria-pressed={activeHeroVideo === index}
+              aria-label={`Go to ${label}`}
+              aria-current={activeSectionId === href.slice(1) ? 'true' : undefined}
             />
           ))}
         </div>
       </section>
 
       <main>
-        {storySections.map(({ id, title, eyebrow, description, media, mediaType, icon: Icon }, index) => (
+        {storySections.map(({ id, title, eyebrow, description, media, icon: Icon }, index) => (
           <section key={id} id={id} className={`scroll-mt-24 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
             <div className={`mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center ${index % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
               <div>
@@ -320,13 +325,9 @@ function About() {
               </div>
 
               <div className="overflow-hidden rounded-lg bg-slate-900 shadow-xl">
-                {mediaType === 'video' ? (
-                  <video className="aspect-video w-full object-cover" autoPlay muted loop playsInline>
-                    <source src={media} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img src={media} alt="" className="aspect-video w-full object-cover" />
-                )}
+                <video className="aspect-video w-full object-cover" autoPlay muted loop playsInline>
+                  <source src={media} type="video/mp4" />
+                </video>
               </div>
             </div>
           </section>
