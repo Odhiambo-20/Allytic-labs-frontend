@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BriefcaseBusiness, ChevronDown, ChevronRight, Cpu, Drone, History, Leaf, Menu, Newspaper, Search, UserCircle, X, Zap } from 'lucide-react';
-import BrandLogo from '../components/BrandLogo';
+import { ArrowRight, BriefcaseBusiness, ChevronDown, Cpu, Drone, History, Leaf, Menu, Newspaper, X, Zap } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter';
 import roboticsVideo from '../assets/advanced robotics.mp4';
 import robotImage from '../assets/professional drone.jpg';
@@ -169,29 +168,6 @@ function About() {
             <source src={roboticsVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/35" />
-        </div>
-
-        <div className="relative z-20 border-b border-zinc-200 bg-white text-zinc-950">
-          <div className="mx-auto flex h-12 max-w-7xl items-center justify-between px-6">
-            <div className="flex min-w-0 items-center gap-3">
-              <BrandLogo compact colorClass="text-zinc-950" />
-              <ChevronRight className="h-4 w-4 shrink-0 text-zinc-500" />
-              <button type="button" className="truncate text-base text-zinc-700 transition hover:text-zinc-950">
-                Main Menu
-              </button>
-            </div>
-            <div className="flex items-center gap-5 text-sm text-zinc-600">
-              <Link to="/robots" className="hidden transition hover:text-zinc-950 sm:inline">Shop</Link>
-              <Link to="/drones" className="hidden transition hover:text-zinc-950 sm:inline">Drivers</Link>
-              <Link to="/support" className="hidden transition hover:text-zinc-950 sm:inline">Support</Link>
-              <button type="button" className="inline-flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-zinc-100" aria-label="Search">
-                <Search className="h-5 w-5" />
-              </button>
-              <Link to="/login" className="inline-flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-zinc-100" aria-label="Sign up or log in">
-                <UserCircle className="h-6 w-6" />
-              </Link>
-            </div>
-          </div>
         </div>
 
         <div className="relative z-20 border-b border-white/10 bg-black">
