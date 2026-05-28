@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BriefcaseBusiness, ChevronDown, Cpu, Drone, History, Leaf, Menu, Newspaper, X, Zap } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter';
 import roboticsVideo from '../assets/advanced robotics.mp4';
+import robotOneVideo from '../assets/robot1.mp4';
+import robotTwoVideo from '../assets/robot2.mp4';
+import robotVideo from '../assets/robot.mp4';
+import droneVideo from '../assets/drone.mp4';
+import solarVideo from '../assets/solar.mp4';
+import solarEnergyVideo from '../assets/solar energy.mp4';
+import solarPanelsVideo from '../assets/solar panels.mp4';
 import robotImage from '../assets/professional drone.jpg';
 import solarImage from '../assets/roof-top solar.jpg';
 import droneImage from '../assets/agricultural drone.jpg';
@@ -14,6 +21,17 @@ const anchors = [
   ['#connecting-physical-operations', 'Connecting Physical Operations'],
   ['#energy-resilience', 'Energy Resilience'],
   ['#like-no-place-you-have-worked', 'Like No Place You Have Worked'],
+];
+
+const heroVideos = [
+  ['Our Body of Work', roboticsVideo],
+  ['Automation Systems', robotOneVideo],
+  ['Field Robotics', robotTwoVideo],
+  ['Industrial Robotics', robotVideo],
+  ['Aerial Operations', droneVideo],
+  ['Solar Deployment', solarVideo],
+  ['Energy Systems', solarEnergyVideo],
+  ['Solar Infrastructure', solarPanelsVideo],
 ];
 
 const storySections = [
@@ -114,6 +132,7 @@ const subnavMenus = [
 function About() {
   const [openMenu, setOpenMenu] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+  const [activeHeroVideo, setActiveHeroVideo] = useState(0);
 
   useEffect(() => {
     const sectionIds = anchors.map(([href]) => href.slice(1));
@@ -164,8 +183,8 @@ function About() {
     <div className="min-h-screen bg-white text-slate-950">
       <section id="body-of-work" className="relative min-h-[calc(100vh-4rem)] scroll-mt-24 overflow-hidden bg-black pt-16 text-white">
         <div className="absolute inset-0">
-          <video className="h-full w-full object-cover opacity-45 grayscale" autoPlay muted loop playsInline>
-            <source src={roboticsVideo} type="video/mp4" />
+          <video key={heroVideos[activeHeroVideo][1]} className="h-full w-full object-cover opacity-45 grayscale" autoPlay muted loop playsInline>
+            <source src={heroVideos[activeHeroVideo][1]} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/35" />
         </div>
@@ -270,6 +289,21 @@ function About() {
         <a href="/contact" className="absolute right-0 top-1/2 z-40 hidden -translate-y-1/2 rotate-180 bg-white px-3 py-4 text-sm font-semibold text-black [writing-mode:vertical-rl] lg:block">
           Feedback
         </a>
+
+        <div className="absolute right-14 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-3 lg:flex" aria-label="About hero videos">
+          {heroVideos.map(([label], index) => (
+            <button
+              key={label}
+              type="button"
+              onClick={() => setActiveHeroVideo(index)}
+              className={`h-3 w-3 rounded-sm border border-white/80 transition ${
+                activeHeroVideo === index ? 'bg-white' : 'bg-white/35 hover:bg-white/70'
+              }`}
+              aria-label={`Show ${label} video`}
+              aria-pressed={activeHeroVideo === index}
+            />
+          ))}
+        </div>
       </section>
 
       <main>
