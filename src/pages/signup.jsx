@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { API_V1_BASE_URL } from '../config/api';
 
-// UPDATED: API Configuration for AWS Backend
-const API_BASE_URL = import.meta.env.VITE_API_URL || 
-                     process.env.REACT_APP_API_URL || 
-                     'http://allytic-labs-prod.eba-pukad2pd.us-east-1.elasticbeanstalk.com/api/v1';
-                  
-
-console.log('SignUp - Using API Base URL:', API_BASE_URL);
+console.info('SignUp API base URL:', API_V1_BASE_URL);
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -104,10 +99,10 @@ function SignUp() {
         name: `${formData.firstName} ${formData.lastName}` // Combined name
       };
 
-      console.log('Sending registration request to:', `${API_BASE_URL}/auth/register`);
+      console.log('Sending registration request to:', `${API_V1_BASE_URL}/auth/register`);
       console.log('Payload:', { ...registrationPayload, password: '***', confirmPassword: '***' });
 
-      const response = await fetch(`${API_BASE_URL}/auth/register`, {
+      const response = await fetch(`${API_V1_BASE_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

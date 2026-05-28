@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, AlertCircle } from 'lucide-react';
+import { API_V1_BASE_URL, buildOAuthAuthorizeUrl } from '../config/api';
 
-// UPDATED: API Configuration for AWS Backend
-const API_BASE_URL = import.meta.env.VITE_API_URL || 
-                     process.env.REACT_APP_API_URL || 
-                     'http://allytic-labs-prod.eba-pukad2pd.us-east-1.elasticbeanstalk.com';
-
-console.log('Login - Using API Base URL:', API_BASE_URL);
+console.info('Login API base URL:', API_V1_BASE_URL);
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -55,10 +51,10 @@ const Login = () => {
     setLoading(true);
 
     try {
-      console.log('Sending login request to:', `${API_BASE_URL}/api/v1/auth/login`);
+      console.log('Sending login request to:', `${API_V1_BASE_URL}/auth/login`);
       console.log('Login payload:', { username: email, password: '***' });
 
-      const response = await fetch(`${API_BASE_URL}/api/v1/auth/login`, {
+      const response = await fetch(`${API_V1_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -155,12 +151,8 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    // Store return URL before OAuth redirect
     const returnTo = localStorage.getItem('returnTo') || '/';
-    
-    // Redirect to backend OAuth2 endpoint
-    const redirectUri = encodeURIComponent(`${window.location.origin}/oauth2/redirect`);
-    window.location.href = `${API_BASE_URL}/oauth2/authorize/google?redirect_uri=${redirectUri}&state=${encodeURIComponent(returnTo)}`;
+    window.location.assign(buildOAuthAuthorizeUrl(returnTo));
   };
 
   const handleCreateAccount = () => {
