@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, CheckCircle, Handshake, Mail, PackageCheck, Rocket, Wrench } from 'lucide-react';
+import SiteFooter from '../components/SiteFooter';
 
 const partnershipTypes = [
   {
@@ -154,6 +155,7 @@ export default function Partnerships() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

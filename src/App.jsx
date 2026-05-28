@@ -13,6 +13,9 @@ import Demo from './pages/Demo';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import OAuthRedirect from './pages/OAuthRedirect';
+import Careers from './pages/Careers';
+import News from './pages/News';
+import Support from './pages/Support';
 
 import LatestModels from './pages/LatestModels';
 
@@ -31,6 +34,9 @@ export default function App() {
         <Route path="/company" element={<About />} />
         <Route path="/partners" element={<Partnerships />} />
         <Route path="/partnerships" element={<Partnerships />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/contact" element={<Contact />} />
     
         <Route path="/solarpanels" element={<Solarpanels />} /> 

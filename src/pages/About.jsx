@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Bot, Cpu, Globe2, Leaf, ShieldCheck, Target, Zap } from 'lucide-react';
 import BrandLogo from '../components/BrandLogo';
+import SiteFooter from '../components/SiteFooter';
 
 const strengths = [
   {
@@ -138,6 +139,7 @@ export default function About() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }
