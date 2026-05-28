@@ -15,14 +15,18 @@
 }
 
 .about-section-copy {
-  animation: about-copy-reveal 700ms ease forwards;
-  animation-delay: 450ms;
   opacity: 0;
+  transform: translateY(18px);
+}
+
+.about-section-copy.is-visible {
+  animation: about-copy-reveal 700ms ease forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .about-section-copy {
     animation: none;
     opacity: 1;
+    transform: none;
   }
 }
