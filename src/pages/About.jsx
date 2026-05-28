@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BriefcaseBusiness, Cpu, Drone, History, Leaf, Newspaper, Zap } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter';
@@ -9,16 +9,16 @@ import droneImage from '../assets/agricultural drone.jpg';
 
 const anchors = [
   ['#body-of-work', 'Our Body of Work'],
-  ['#automation', 'The Automation Moment'],
-  ['#robotics', 'Robotics for the Field'],
-  ['#drones', 'Connecting Physical Operations'],
-  ['#energy', 'Energy Resilience'],
-  ['#careers', 'Like No Place You Have Worked'],
+  ['#the-automation-moment', 'The Automation Moment'],
+  ['#robotics-for-the-field', 'Robotics for the Field'],
+  ['#connecting-physical-operations', 'Connecting Physical Operations'],
+  ['#energy-resilience', 'Energy Resilience'],
+  ['#like-no-place-you-have-worked', 'Like No Place You Have Worked'],
 ];
 
 const storySections = [
   {
-    id: 'automation',
+    id: 'the-automation-moment',
     title: 'The Automation Moment',
     eyebrow: 'Practical intelligence',
     description:
@@ -28,7 +28,7 @@ const storySections = [
     icon: Cpu,
   },
   {
-    id: 'robotics',
+    id: 'robotics-for-the-field',
     title: 'Robotics for the Field',
     eyebrow: 'Machines that work',
     description:
@@ -38,7 +38,7 @@ const storySections = [
     icon: Zap,
   },
   {
-    id: 'drones',
+    id: 'connecting-physical-operations',
     title: 'Connecting Physical Operations',
     eyebrow: 'Aerial visibility',
     description:
@@ -48,7 +48,7 @@ const storySections = [
     icon: Drone,
   },
   {
-    id: 'energy',
+    id: 'energy-resilience',
     title: 'Energy Resilience',
     eyebrow: 'Sustainable deployment',
     description:
@@ -67,9 +67,43 @@ const resourceLinks = [
 ];
 
 function About() {
+  useEffect(() => {
+    const sectionIds = anchors.map(([href]) => href.slice(1));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const updateHash = (id) => {
+      const nextUrl = `${window.location.pathname}#${id}`;
+      if (window.location.hash !== `#${id}`) {
+        window.history.replaceState(null, '', nextUrl);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry?.target?.id) {
+          updateHash(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: '-35% 0px -50% 0px',
+        threshold: [0.2, 0.4, 0.6, 0.8],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-slate-950">
-      <section id="body-of-work" className="bg-slate-950 pt-28 text-white">
+      <section id="body-of-work" className="scroll-mt-24 bg-slate-950 pt-28 text-white">
         <div className="mx-auto max-w-7xl px-6 pb-20 pt-10">
           <nav className="mb-12 flex flex-wrap gap-x-7 gap-y-3 border-b border-white/10 pb-6 text-sm font-semibold text-slate-300">
             {anchors.map(([href, label]) => (
@@ -101,7 +135,7 @@ function About() {
 
       <main>
         {storySections.map(({ id, title, eyebrow, description, media, mediaType, icon: Icon }, index) => (
-          <section key={id} id={id} className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+          <section key={id} id={id} className={`scroll-mt-24 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
             <div className={`mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center ${index % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
               <div>
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-cyan-300">
@@ -125,7 +159,7 @@ function About() {
           </section>
         ))}
 
-        <section id="careers" className="bg-slate-950 text-white">
+        <section id="like-no-place-you-have-worked" className="scroll-mt-24 bg-slate-950 text-white">
           <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase text-cyan-300">Culture</p>
