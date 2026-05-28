@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BrandLogo = ({ className = '' }) => (
+const BrandLogo = ({ className = '', colorClass = 'text-white', compact = false }) => (
   <Link
     to="/"
     className={`group flex shrink-0 items-center ${className}`}
     aria-label="Bella home"
   >
-    <span className="inline-flex items-center text-white transition-colors group-hover:text-blue-100">
+    <span className={`inline-flex items-center transition-colors group-hover:text-blue-100 ${colorClass}`}>
       <svg
-        className="h-14 w-[12.5rem]"
+        className={compact ? 'h-8 w-28' : 'h-14 w-[12.5rem]'}
         viewBox="0 0 360 116"
         role="img"
         aria-labelledby="bellaLogoTitle"
