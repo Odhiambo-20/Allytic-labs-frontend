@@ -30,17 +30,21 @@ const BrandLogo = ({ className = '', compact = false }) => (
       </g>
 
       <text
-        x="250"
+        x="89"
         y="170"
         fill="currentColor"
-        textAnchor="middle"
         fontFamily="Arial, Helvetica, sans-serif"
         fontSize="92"
         fontWeight="500"
         letterSpacing="2"
       >
-        BELLA
+        BELL
       </text>
+      <path
+        d="M327 170 372 99 417 170h-23l-22-40-22 40z"
+        fill="currentColor"
+        aria-hidden="true"
+      />
       <text
         x="250"
         y="226"
