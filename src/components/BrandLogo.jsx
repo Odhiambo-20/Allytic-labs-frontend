@@ -13,7 +13,7 @@ const BrandLogo = ({ className = '', compact = false }) => (
       role="img"
       aria-label="Bella Technologies"
     >
-      <g transform="translate(201 2) scale(.5)">
+      <g transform="translate(216 0) scale(.38)">
         <path
           d="M100 18c59 0 106 48 106 107 0 60-48 108-108 108-57 0-104-44-108-100-2-39 18-77 51-98-18 25-27 53-24 80 4 43 39 77 82 77 46 0 83-37 83-83 0-41-30-76-70-82-4-1-8-1-12-1z"
           fill="#a71938"
