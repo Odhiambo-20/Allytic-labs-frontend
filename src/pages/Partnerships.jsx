@@ -46,7 +46,7 @@ export default function Partnerships() {
               Strategic partnerships
             </div>
             <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-normal md:text-6xl">
-              Partner with Allytic Labs
+              Partner with Bella Technologies
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               We work with serious suppliers, deployment teams, institutions, and channel partners who can help bring robotics, drones, and solar technology into real-world use.
@@ -100,7 +100,7 @@ export default function Partnerships() {
               <p className="text-sm font-bold uppercase text-blue-700">Partner Standard</p>
               <h2 className="mt-3 text-3xl font-bold tracking-normal text-slate-950">We look for partners who can execute.</h2>
               <p className="mt-5 text-base leading-7 text-slate-700">
-                Allytic Labs is interested in partnerships that improve customer outcomes, expand responsible access to technology, and reduce deployment risk.
+                Bella Technologies is interested in partnerships that improve customer outcomes, expand responsible access to technology, and reduce deployment risk.
               </p>
             </div>
             <div className="grid gap-4">

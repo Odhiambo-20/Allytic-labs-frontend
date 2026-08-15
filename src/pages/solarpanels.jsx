@@ -46,7 +46,7 @@ const SolarPanels = () => {
       name: 'Sarah Johnson',
       company: 'Green Home Solutions',
       rating: 5,
-      text: 'Allytic Labs solar panels have exceeded our expectations. The efficiency is outstanding and the smart monitoring system is incredibly useful.',
+      text: 'Bella Technologies solar panels have exceeded our expectations. The efficiency is outstanding and the smart monitoring system is incredibly useful.',
       location: 'Nairobi, Kenya'
     },
     {

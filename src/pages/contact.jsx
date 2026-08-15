@@ -151,7 +151,7 @@ const Contact = () => {
               Production support and commercial inquiries
             </div>
             <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-normal md:text-6xl">
-              Contact Allytic Labs
+              Contact Bella Technologies
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               Reach the team responsible for robotics, drone operations, and solar technology deployments. Send a focused inquiry and we will route it to the right desk.
@@ -445,7 +445,7 @@ const Contact = () => {
         </div>
 
         <div className="mx-auto mt-10 max-w-7xl border-t border-slate-800 px-6 pt-6 text-sm text-slate-500">
-          <p>&copy; 2026 Allytic Labs. All rights reserved.</p>
+          <p>&copy; 2026 Bella Technologies. All rights reserved.</p>
         </div>
       </footer>
     </div>
