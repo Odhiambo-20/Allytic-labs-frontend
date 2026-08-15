@@ -35,15 +35,15 @@ const contactChannels = [
   {
     label: 'Sales & Projects',
     detail: 'Talk to us about robotics, drones, solar systems, and deployment scope.',
-    value: 'business@ailyticslabs.com',
-    href: 'mailto:business@ailyticslabs.com',
+    value: 'business@bellatechnologies.com',
+    href: 'mailto:business@bellatechnologies.com',
     icon: Building2,
   },
   {
     label: 'General Support',
     detail: 'For product questions, active orders, service requests, and follow-up.',
-    value: 'info@ailyticslabs.com',
-    href: 'mailto:info@ailyticslabs.com',
+    value: 'info@bellatechnologies.com',
+    href: 'mailto:info@bellatechnologies.com',
     icon: Headphones,
   },
   {
@@ -135,7 +135,7 @@ const Contact = () => {
     } catch (error) {
       console.error('Failed to submit contact form:', error);
       setSubmitStatus('error');
-      setErrorMessage('We could not send your message. Please email business@ailyticslabs.com directly.');
+      setErrorMessage('We could not send your message. Please email business@bellatechnologies.com directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -421,23 +421,23 @@ const Contact = () => {
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li><Link to="/company" className="hover:text-white">Company</Link></li>
               <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-              <li><a href="mailto:recruitment@ailyticslabs.com" className="hover:text-white">Careers</a></li>
+              <li><a href="mailto:recruitment@bellatechnologies.com" className="hover:text-white">Careers</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold">Social</h3>
             <div className="mt-4 flex gap-3">
-              <a href="https://www.instagram.com/ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="Instagram">
+              <a href="https://www.instagram.com/bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://github.com/ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="GitHub">
+              <a href="https://github.com/bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="https://www.youtube.com/@ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="YouTube">
+              <a href="https://www.youtube.com/@bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="YouTube">
                 <Youtube className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

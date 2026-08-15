@@ -266,7 +266,7 @@ const SolarPanels = () => {
       <div className="bg-black/5 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Why Choose Allytic Solar?</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Why Choose Bella Solar?</h2>
             <p className="text-xl text-slate-700">Experience the advantages of our advanced solar technology and comprehensive service.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

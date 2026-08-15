@@ -3,7 +3,7 @@ import { ChevronRight, Instagram, Github, Youtube, Linkedin } from 'lucide-react
 import { useNavigate } from 'react-router-dom';
 import { robotAPI } from '../services/api';
 import BrandLogo from '../components/BrandLogo';
-import AllyticVideo from '../assets/Allytic.mp4';
+import BellaVideo from '../assets/Bella.mp4';
 import FoodTestingRobot from '../assets/Food Testing Robot.webm';
 import AgriculturalRobotVideo from '../assets/Agricultural Robot.webm';
 import RoboticDog from '../assets/Robotic Dog.mp4';
@@ -78,7 +78,7 @@ function Robots() {
               transform: 'translate(-50%, -50%)'
             }}
           >
-            <source src={AllyticVideo} type="video/mp4" />
+            <source src={BellaVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black/40"></div>

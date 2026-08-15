@@ -1,4 +1,4 @@
-const DEFAULT_API_ORIGIN = 'https://allytic-labs-prod.eba-pukad2pd.us-east-1.elasticbeanstalk.com';
+const DEFAULT_API_ORIGIN = 'https://bella-technologies-prod.eba-pukad2pd.us-east-1.elasticbeanstalk.com';
 
 const trimTrailingSlashes = (value) => value.replace(/\/+$/, '');
 

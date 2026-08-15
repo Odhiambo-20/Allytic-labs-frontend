@@ -52,7 +52,7 @@ export default function Partnerships() {
               We work with serious suppliers, deployment teams, institutions, and channel partners who can help bring robotics, drones, and solar technology into real-world use.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="mailto:business@ailyticslabs.com" className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
+              <a href="mailto:business@bellatechnologies.com" className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
                 Start partnership inquiry
                 <Mail className="h-5 w-5" />
               </a>
@@ -120,7 +120,7 @@ export default function Partnerships() {
               <p className="text-sm font-bold uppercase text-blue-700">Process</p>
               <h2 className="mt-3 text-3xl font-bold tracking-normal text-slate-950">How partnership conversations move forward.</h2>
             </div>
-            <a href="mailto:business@ailyticslabs.com" className="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800">
+            <a href="mailto:business@bellatechnologies.com" className="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800">
               Email business team
               <ArrowRight className="h-5 w-5" />
             </a>
@@ -144,8 +144,8 @@ export default function Partnerships() {
               Send a concise overview of your organization, region, capabilities, and the partnership model you have in mind.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="mailto:business@ailyticslabs.com" className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
-                business@ailyticslabs.com
+              <a href="mailto:business@bellatechnologies.com" className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
+                business@bellatechnologies.com
                 <Mail className="h-5 w-5" />
               </a>
               <Link to="/contact" className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">

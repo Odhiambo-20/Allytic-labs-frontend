@@ -49,9 +49,9 @@ function Support() {
                 Contact support
                 <ArrowRight className="h-5 w-5" />
               </Link>
-              <a href="mailto:support@ailyticslabs.com" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
+              <a href="mailto:support@bellatechnologies.com" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
                 <Mail className="h-5 w-5" />
-                support@ailyticslabs.com
+                support@bellatechnologies.com
               </a>
             </div>
           </div>

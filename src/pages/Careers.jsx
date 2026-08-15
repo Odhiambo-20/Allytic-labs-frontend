@@ -44,8 +44,8 @@ function Careers() {
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
               Send your CV, area of interest, and examples of relevant work. We review applications based on practical capability and reliability.
             </p>
-            <a href="mailto:recruitment@ailyticslabs.com" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
-              recruitment@ailyticslabs.com
+            <a href="mailto:recruitment@bellatechnologies.com" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700">
+              recruitment@bellatechnologies.com
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>

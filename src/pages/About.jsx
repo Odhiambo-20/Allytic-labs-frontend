@@ -114,14 +114,14 @@ const subnavMenus = [
     links: [
       ['Open Roles', '/careers'],
       ['Culture', '/about#like-no-place-you-have-worked'],
-      ['Contact Recruiting', 'mailto:recruitment@ailyticslabs.com'],
+      ['Contact Recruiting', 'mailto:recruitment@bellatechnologies.com'],
     ],
   },
   {
     label: 'News',
     links: [
       ['Company Updates', '/news'],
-      ['Contact Media', 'mailto:business@ailyticslabs.com'],
+      ['Contact Media', 'mailto:business@bellatechnologies.com'],
     ],
   },
   {

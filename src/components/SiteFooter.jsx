@@ -40,16 +40,16 @@ function SiteFooter() {
             <li><Link to="/support" className="hover:text-white">Support</Link></li>
           </ul>
           <div className="mt-5 flex gap-3">
-            <a href="https://www.instagram.com/ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="Instagram">
+            <a href="https://www.instagram.com/bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="Instagram">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://github.com/ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="GitHub">
+            <a href="https://github.com/bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="GitHub">
               <Github className="h-5 w-5" />
             </a>
-            <a href="https://www.youtube.com/@ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="YouTube">
+            <a href="https://www.youtube.com/@bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="YouTube">
               <Youtube className="h-5 w-5" />
             </a>
-            <a href="https://www.linkedin.com/company/ailyticslabs" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/bellatechnologies" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
